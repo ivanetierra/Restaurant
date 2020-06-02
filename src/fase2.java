@@ -24,9 +24,9 @@ public class fase2 {
 			Scanner scan2 = new Scanner (System.in); 
 	        double preu = Double.parseDouble(scan2.nextLine());
 	        preuPlats[i]=preu;
-	        	}catch(NumberFormatException e) {
-	        		System.out.println("No es un número");
-	        		
+	        	}catch(Exception e) {
+	        		System.out.println("No es un precio correcto, vuelva a introducir plato y precio");
+	        		i--;
 	        	}
 		}
 		
