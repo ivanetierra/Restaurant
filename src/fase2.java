@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class fase2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException{
+		
+			
 		int de5, de10, de20, de50, de100, de200, de500;
 		int preuTotal;
 		String[] menu = new String[5];
@@ -16,10 +18,16 @@ public class fase2 {
 	        String plat = scan.nextLine();
 	        menu[i]=plat;
 	        
+	        
+	        	try {
 	        System.out.println("Introduzca el precio del plato "+(i+1)+"/5:"); //per introduir els 5 preus
 			Scanner scan2 = new Scanner (System.in); 
 	        double preu = Double.parseDouble(scan2.nextLine());
 	        preuPlats[i]=preu;
+	        	}catch(NumberFormatException e) {
+	        		System.out.println("No es un número");
+	        		
+	        	}
 		}
 		
 		System.out.println("Platos: "+Arrays.toString(menu));
@@ -38,7 +46,13 @@ public class fase2 {
 	        
 	        System.out.println("quiere seguir pidiendo?(1:Si / 0:No):");
 			Scanner scan4 = new Scanner (System.in); 
-	        seguir = Integer.parseInt(scan4.nextLine());     
+	        seguir = Integer.parseInt(scan4.nextLine());  
+	        
+	       /* while((seguir != 1) || (seguir != 0)){
+	        	System.out.println("Mal, vuelve a introducir:(1:Si / 0:No)");
+	        	Scanner scan5 = new Scanner (System.in); 
+		        seguir = Integer.parseInt(scan5.nextLine()); 
+	        }*/
 		}
 		
 		System.out.println("Platos pedidos: "+pedido);
